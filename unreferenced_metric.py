@@ -46,7 +46,7 @@ class Unreferenced():
         qembed = cPickle.load(open(fqembed, 'rb'))
         rembed = cPickle.load(open(frembed, 'rb'))
 
-        config = tf.ConfigProto()
+        config = tf.ConfigProto(allow_soft_placement = True)
         config.gpu_options.allow_growth = True
         self.session = tf.Session(config=config)
 
